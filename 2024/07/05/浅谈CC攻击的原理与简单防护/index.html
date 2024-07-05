@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CC攻击 | Hexo</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=1.12.2"><!-- inject head--><link rel="canonical" href="http://example.com/2024/07/05/%E6%B5%85%E8%B0%88CC%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%80%E5%8D%95%E9%98%B2%E6%8A%A4/"><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/7pOrz0WXB5ZWJPX/latest/iconfont.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="什么是CC攻击CC攻击（Challenge Collapsar）是DDOS（分布式拒绝服务）的一种，是一种常见的网站攻击方法，攻击者通过代理服务器或者肉鸡向受害主机不停访问，造成服务器资源耗尽，一直到宕机崩溃 CC攻击利用代理服务器向网站发送大量需要较长计算时间的URL请求，如数据库查询等，导致服务"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Hexo"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(
+    "%c Program: Hexo %c Theme: Solitude %c Version: v1.12.2",
+    "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;",
+    "padding: 5px 10px;color:white;background:#3e9f50;",
+    "padding: 5px 10px;color:white;background:#0084ff;border-radius:0 5px 5px 0",
+)
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+    
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+    
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+    
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+    
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+        
+                if (name && keyObj[name]) return
+        
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+        }
+    })()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":50,"author":"作者: John Doe","link":"链接: ","source":"来源: Hexo","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {
+        enable: true,
+        limit: 200,
+        expand: true,
+        copy: true,
+        syntax: 'highlight.js'
+    },
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: '一日之计在于晨',
+            noon: '吃饱了才有力气干活',
+            afternoon: '集中精力，攻克难关',
+            night: '不要太劳累了，早睡更健康',
+            goodnight: '睡个好觉，保证精力充沛',
+        },
+        sayhello2: [],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude st-close-fill"></i></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude st-moon-clear-fill"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude st-side-bar-fill"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude st-moon-clear-fill"></i><span>显示模式</span></span></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/CC%E6%94%BB%E5%87%BB/">CC攻击<sup>1</sup></a><a href="/tags/DDOS%E6%94%BB%E5%87%BB/">DDOS攻击<sup>1</sup></a><a href="/tags/CC%E8%84%9A%E6%9C%AC/">CC脚本<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">Solitude</span></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">CC攻击</a></div></div><div id="menus"></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude st-arrow-up-line"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude st-menu-line"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/default.avif" alt="CC攻击"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CC%E6%94%BB%E5%87%BB/"><span class="tags-name tags-punctuation">CC攻击</span></a><a class="post-meta__tags" href="/tags/DDOS%E6%94%BB%E5%87%BB/"><span class="tags-name tags-punctuation">DDOS攻击</span></a><a class="post-meta__tags" href="/tags/CC%E8%84%9A%E6%9C%AC/"><span class="tags-name tags-punctuation">CC脚本</span></a></div></div></div></div><h1 class="post-title">CC攻击</h1><div id="post-meta"><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="什么是CC攻击"><a href="#什么是CC攻击" class="headerlink" title="什么是CC攻击"></a>什么是CC攻击</h2><p>CC攻击（<strong>Challenge Collapsar</strong>）是DDOS（分布式拒绝服务）的一种，是一种常见的网站攻击方法，攻击者通过代理服务器或者肉鸡向受害主机不停访问，造成服务器资源耗尽，一直到宕机崩溃 CC攻击利用代理服务器向网站发送大量需要较长计算时间的URL请求，如数据库查询等，导致服务器进行大量计算而很快达到自身的处理能力而形成DOS</p>
+<p>而攻击者一旦发送请求给代理后就主动断开连接，因为代理并不因为客户端这边连接的断开就不去连接目标服务器，因此攻击机的资源消耗相对很小，而从目标服务器看来，来自代理的请求都是合法的</p>
+<h2 id="CC攻击演示"><a href="#CC攻击演示" class="headerlink" title="CC攻击演示"></a>CC攻击演示</h2><p>CC攻击分为肉鸡攻击和服务器攻击</p>
+<p>肉鸡攻击通常是被感染的机器所发起的攻击 并非攻击者本机发起的攻击</p>
+<p>例如攻击者成功黑了一个访问量巨大的网站首页，在页面中添加了100个如下的代码：</p>
+<iframe src=**http://aaa.com** border=”0″ width=”0″ height=”0″></iframe>
+
+<p><strong><a target="_blank" rel="noopener" href="http://aaa.com/">http://aaa.com</a></strong> 就是攻击的目标网站 效果就是每当有人访问了这个被黑的首页，就有100个<a target="_blank" rel="noopener" href="http://aaa.com请求/">http://aaa.com请求</a> 由于这个被黑的首页访问量极大，所以<a target="_blank" rel="noopener" href="http://aaa.com的压力可想而知/">http://aaa.com的压力可想而知</a> 这个方式还是有点复杂，需要黑掉某网站，现在方便了，免费的代理非常多，所以CC的主要手段就变为使用大量代理服务器发起攻击</p>
+<h2 id="CC与DDOS的区别"><a href="#CC与DDOS的区别" class="headerlink" title="CC与DDOS的区别"></a>CC与DDOS的区别</h2><p>DDoS是针对IP的攻击，而CC攻击的是网页</p>
+<h2 id="CC攻击的常用防护方式"><a href="#CC攻击的常用防护方式" class="headerlink" title="CC攻击的常用防护方式"></a>CC攻击的常用防护方式</h2><p><em>—DDoS可以用硬件防火墙来过滤攻击，CC攻击本身的请求就是正常的请求，硬件防火墙对他起不到很好的防御效果</em></p>
+<p>01</p>
+<p>云WAF</p>
+<p>例如：360安全卫士、百度云加速 思路很简单，就是用户访问你的域名时，会经过这类产品的代理扫描，发现问题直接拦下，没问题的话就把用户请求转到你的网站 <strong>优点</strong></p>
+<p>安装配置快速，大公司产品保障好 <strong>弊端</strong> 1）有绕过的风险 WAF对网站的保护主要是通过反向代理来实现，如果不经过这个代理，自然就无法防护网站，所以，攻击者如果找到方法可以获取网站的IP，那么就可以绕过WAF而直接攻击 2）网站访问数据不保密 如果您的网站访问数据属于保密信息，就不能使用WAF了</p>
+<p>02</p>
+<p>web服务器端区分攻击者与正常访客</p>
+<p>通过分析网站日志，基本可以分辨出哪个IP是CC攻击的 例如普通浏览者访问一个网页，必定会连续抓取网页的HTML、CSS、JS和图片等一系列相关文件，而CC攻击是通过程序来抓取网页，仅仅只会抓取一个URL地址的文件，不会抓取其他类型的文件 所以通过辨别攻击者的IP，进行屏蔽，就可以起到很好的防范效果</p>
+<p>03</p>
+<p>网站内容静态化</p>
+<p>静态内容可以极大程度的减少系统资源消耗，也就破坏了攻击者想要让服务器资源耗尽的目的</p>
+<p>04</p>
+<p>限制IP连接数</p>
+<p>一般正常的浏览者肯定不会在一秒内连续多次极快的访问同一个页面，可以配置web服务器，限定ip访问频率</p>
+<p>05</p>
+<p>限制代理的访问</p>
+<p>因为一般的代理都会在HTTP头中带X_FORWARDED_FOR字段，但也有局限，有的代理的请求中是不带该字段的，另外有的客户端确实需要代理才能连接目标服务器，这种限制就拒绝了这类合法客户</p>
+<p><em>—防护方式有很多，这里只列了几个常用的，但目前还没有统一而绝对有效的方法可以防护CC攻击，只能多种手段并用，可以多留意云安全类产品，关注最新的防护方式</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/img/pwa/favicon.ico"></a><div class="post-copyright__author_name">Hexo</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">Hexo</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CC%E6%94%BB%E5%87%BB/"><span class="tags-punctuation"></span>CC攻击<span class="tagsPageCount">1</span></a><a class="post-meta__tags" href="/tags/DDOS%E6%94%BB%E5%87%BB/"><span class="tags-punctuation"></span>DDOS攻击<span class="tagsPageCount">1</span></a><a class="post-meta__tags" href="/tags/CC%E8%84%9A%E6%9C%AC/"><span class="tags-punctuation"></span>CC脚本<span class="tagsPageCount">1</span></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="/img/avatar.avif"><div class="avatar-sticker"><img class="avatar-sticker-img" src="https://7.isyangs.cn/34/65f2e4e0423cc-34.png" alt="心情贴纸"></div></div><div class="author-info__description_group"><div class="author-info__description">分享自己对编程的<b>热爱</b>，对美好生活的<b>向往</b>，对知识海洋<b>探索历程</b>。</div><div class="author-info__description2">相信你可以在这里找到对你有用的知识和教程。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">John Doe</div><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude st-menu-line"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFCC%E6%94%BB%E5%87%BB"><span class="toc-text">什么是CC攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CC%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA"><span class="toc-text">CC攻击演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CC%E4%B8%8EDDOS%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">CC与DDOS的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CC%E6%94%BB%E5%87%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E9%98%B2%E6%8A%A4%E6%96%B9%E5%BC%8F"><span class="toc-text">CC攻击的常用防护方式</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude st-map-line"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/05/%E6%B5%85%E8%B0%88CC%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%80%E5%8D%95%E9%98%B2%E6%8A%A4/" title="CC攻击"><img alt="CC攻击" src="/img/default.avif"></a><div class="content"><a class="title" href="/2024/07/05/%E6%B5%85%E8%B0%88CC%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%80%E5%8D%95%E9%98%B2%E6%8A%A4/" title="CC攻击">CC攻击</a><a class="article-recent_post_categories" href="/2024/07/05/%E6%B5%85%E8%B0%88CC%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E7%AE%80%E5%8D%95%E9%98%B2%E6%8A%A4/">科普</a></div></div></div></div></div></div></main><footer id="footer"><div id="st-footer-bar"><div class="footer-logo"><span>Solitude</span></div><div class="footer-bar-description">来自 Efu 的文章</div><a class="footer-bar-link" href="/about/">了解更多</a></div><div id="footer_deal"></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/">John Doe</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="主题">主题</a><a class="footer-bar-link cc" href="/null" aria-label="copyright"><i class="solitude st-copyright-line"></i><i class="solitude st-creative-commons-by-line"></i><i class="solitude st-creative-commons-nc-line"></i><i class="solitude st-creative-commons-nd-line"></i></a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=1.12.2"></script><script src="/js/main.js?v=1.12.2"></script><script src="/js/third_party/waterfall.min.js?v=1.12.2"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=1.12.2"></script><script>dark()
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--></body></html><script>const posts=["2024/07/05/浅谈CC攻击的原理与简单防护/"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); }</script>
